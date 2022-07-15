@@ -1,0 +1,82 @@
+* {
+    padding: 0;
+    border: 0;
+    margin: 0;
+}
+
+.container {
+    margin: 4rem auto;
+    padding: 2rem;
+    height: 90%;
+    width: 50%;
+}
+
+.header {
+    color: darkblue;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.add {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+
+    * {
+        border-radius: 8px;
+        cursor: pointer;
+    }
+
+    &__task {
+        border: 1px solid #333;
+        padding: 10px 20px;
+        width: 60%;
+    }
+
+    &__button {
+        color: white;
+        background-color: darkblue;
+        width: 20%;
+        margin-right: -40px;
+    }
+}
+
+.task {
+    width: 100%;
+    border: 1px solid #333;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 10px 20px;
+    color: #333;
+    margin-bottom: 1rem;
+
+
+    &_passive {
+        color: rgb(128, 123, 123);
+        background-color: rgb(231, 231, 231);
+    }
+
+    &__desk {
+        padding: 0;
+        margin: 0;
+
+        &_passive {
+            text-decoration: line-through;
+        }
+    }
+
+    &__button {
+        &_delete {
+            color: white;
+            background-color: crimson;
+            padding: 4px 8px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+    }
+    
+}
+
+

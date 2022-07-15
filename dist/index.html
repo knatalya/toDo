@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <title>To do list</title>
+</head>
+<body>
+    <main class="container">
+        <h1 class="header">{{ header }}</h1>
+        <div class="add">
+            <input type="text" name="task" class="add__task" placeholder="Введите задачу" v-model="new_task" value="new_task"/>
+            <input type="button" class="add__button" value="Добавить" @click="add_tasks(tasks)">
+        </div>
+        <div>
+            <div class="task" v-for="(task, index) in tasks">
+                <p class="task__desk" @click="comlete(tasks, tasks_complete, task, index)">{{ task }}</p>
+                <input type="button" class="task__button_delete" value="X" @click="delete_tasks(tasks, index)">
+            </div>
+        </div>
+        <h1 class="header">Выполнено</h1>
+        <div>
+            <div class="task task_passive" v-for="(task_complete, index_complete) in tasks_complete">
+                <p class="task__desk task__desk_passive" @click="comlete(tasks_complete, tasks, task_complete, index_complete)">{{ task_complete }}</p>
+                <input type="button" class="task__button_delete" value="X" @click="delete_tasks(tasks_complete, index_complete)">
+            </div>
+        </div>
+    </main>
+    <script src="./index.js"></script>
+</body>
