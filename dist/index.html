@@ -17,14 +17,14 @@
         </div>
         <div>
             <div class="task" v-for="(task, index) in tasks">
-                <p class="task__desk" @click="comlete(tasks, tasks_complete, task, index)">{{ task }}</p>
+                <p class="task__desk" @click="comlete(tasks, task, index)">{{ task }}</p>
                 <input type="button" class="task__button_delete" value="X" @click="delete_tasks(tasks, index)">
             </div>
         </div>
         <h1 class="header">Выполнено</h1>
         <div>
             <div class="task task_passive" v-for="(task_complete, index_complete) in tasks_complete">
-                <p class="task__desk task__desk_passive" @click="comlete(tasks_complete, tasks, task_complete, index_complete)">{{ task_complete }}</p>
+                <p class="task__desk task__desk_passive" @click="comlete(tasks_complete, task_complete, index_complete)">{{ task_complete }}</p>
                 <input type="button" class="task__button_delete" value="X" @click="delete_tasks(tasks_complete, index_complete)">
             </div>
         </div>

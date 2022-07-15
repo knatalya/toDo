@@ -40,17 +40,17 @@ var app = new Vue({
             this.new_task = '';
             this.saveTasks();
         },
-        comlete: function(tasks_start, tasks_end, task, index) {
+        comlete: function(tasks_start, task, index) {
             if(tasks_start == this.tasks) {
-                tasks_start.splice(index, 1);
+                this.tasks.splice(index, 1);
                 this.saveTasks();
-                tasks_end.push(task); 
+                this.tasks_complete.push(task); 
                 this.saveTasksComplete();
-            } else {
-                tasks_start.splice(index, 1);
+            } else if (tasks_start == this.tasks_complete) {
+                this.tasks_complete.splice(index, 1);
                 this.saveTasksComplete();
-                tasks_end.push(task)
-                this.saveTasksComplete();
+                this.tasks.push(task);
+                this.saveTasks();
             }
         },
         saveTasks() {
